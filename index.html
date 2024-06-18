@@ -75,9 +75,9 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Introduction</h2>
+        <h2 class="title is-3">Abstractions</h2>
         <div class="content has-text-justified">
-          <p>In this paper, we evaluate popular multi-modal large language models (MLLMs) on four datasets created by our lab: VQDv1, TallyQA, TDIUC, and DVQA. These datasets are designed to assess the performance of multi-modal LLMs on various tasks, including visual question answering, counting, and image understanding.</p>
+          <p>With the advent of multi-modal large language models (MLLMs), datasets used for visual question answering (VQA) and referring expression comprehension have seen a resurgence. However, the most popular datasets used to evaluate MLLMs are some of the earliest ones created, and they have many known problems, including extreme bias, spurious correlations, and an inability to permit fine-grained analysis. In this paper, we pioneer evaluating recent MLLMs (LLaVA 1.5, LLaVA-NeXT, BLIP2, InstructBLIP, GPT-4V, and GPT-4o) on datasets designed to address weaknesses in earlier ones.  We assess three VQA datasets: 1) TDIUC, which permits fine-grained analysis on 12 question types, 2) TallyQA, which has simple and complex counting questions, and 3) DVQA, which requires optical character recognition for chart understanding. We also study VQDv1, a dataset that requires identifying all image regions that satisfy a given query. Our experiments reveal the weaknesses of many MLLMs that have not previously been reported. Our code is integrated into the widely used LAVIS framework for MLLM evaluation, enabling the rapid assessment of future MLLMs.</p>
           <p>VQDv1, TallyQA, and DVQA evaluations are not based on complete datasets but instead use representative samples. This effectively shortens the testing sets, allowing developers to expedite the evaluation process while maintaining the diversity of the original datasets. This website provides the datasets, evaluation scripts, and example answer files for researchers to reproduce our results.</p>
         </div>
       </div>

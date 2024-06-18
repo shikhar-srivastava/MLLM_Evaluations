@@ -51,7 +51,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://github.com/KevinLuJian/MLLM-evaluation" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://github.com/KevinLuJian/MLLMs_webpage" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Code</span>
                 </a>
@@ -117,7 +117,20 @@
   </div>
 </section>
 
-<!-- Main Result -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Evaluation Metrics</h2>
+    <div class="content has-text-justified">
+      <p>Evaluating the performance of models within a multi-modal framework requires the use of various metrics that reflect distinct aspects of model capabilities. Accurately understanding these metrics is essential for a precise interpretation of results and for assessing the strengths and weaknesses across different models. In this evaluation, we focus on two types of accuracy: micro accuracy and macro accuracy.</p>
+      
+      <ul>
+        <li><strong>Micro Accuracy:</strong> This metric treats each question equally, representing the traditional approach. It is calculated by dividing the number of correctly answered questions by the total number of questions. This provides a straightforward measure of overall performance across all queries.</li>
+        <li><strong>Macro Accuracy:</strong> Also referred to as Mean-Per-Type accuracy and termed Macro Accuracy for consistency in this paper, this metric ensures that each type of question contributes equally to the overall accuracy. By calculating the arithmetic mean of accuracy across different question types, this measure prevents models from inflating their overall scores by excelling in frequent question types while performing poorly on less common ones. This approach provides a balanced evaluation, highlighting models' capabilities across varied tasks.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- Main Results Section -->
 <section class="section">
   <div class="container is-max-desktop">
@@ -144,9 +157,12 @@
       For instance, BLIP2 have a comparable performance with other more complex models, such as GPT-4, but it performance drop significantly in complex counting questions, which requires, in additional to simple object detection, more sophisticated reasoning capabilities,
       such as pose estimation and positional reasoning. This suggests the necessity of incorporating more complex counting questions in the evaluation of visual reasoning models.
     </p>
-    
-    <p>
-
+    <p align="center">
+      <img src="static/images/results/TallyQA_detail.png" alt="TallyQA Result Image"/>
+    </p>
+    <p>The testing metrics of TallyQA is somewhat allign with VQDv1, the ability to count multiply objects the foundations for 
+      grounding multiple objects in the image. Fig 8 and 9 shows that most model demonstrate performance decay wehn counting multiply objects.
+      This is consistent with the results in VQDv1, where model generally perform less well on multiply object detections. 
     </p>
 
     <!-- TDIUC Results -->

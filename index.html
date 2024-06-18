@@ -118,19 +118,57 @@
 </section>
 
 <!-- Main Result -->
-<section class="section hero is-light">
+<!-- Main Results Section -->
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Main Result</h2>
-        <div class="content has-text-justified">
-          <p>To evaluate the performance of the models on the datasets, we provide evaluation scripts for each dataset. Please prepare the answer files in the format of the question-answer pairs we provided. You can download the evaluation scripts from this repository:</p>
-          <p>Detailed instructions on how to use the scripts are available in the repository.</p>
-        </div>
-      </div>
-    </div>
+    <h2 class="title is-3">Main Results</h2>
+
+    <!-- VQDv1 Results -->
+    <h3 class="title is-4">VQDv1 Results</h3>
+    <p align="center">
+      <img src="static/images/results/VQDv1_result.png" alt="VQDv1 Result Image" style="margin-bottom: 10px;">
+      <figcaption>VQDv1 Result Overview</figcaption>
+      <img src="static/images/results/VQDv1_graph.png" alt="VQDv1 Performance Graph" style="margin-top: 10px;">
+    </p>
+    <p>All models exhibit declined Recall when the number of bounding boxes increases, implying that these models demonstrate an inability to identify multiple objects that satisfy the query (e.g., "show me the sink," some models may only be able to identify one, but not others). 
+      This trend suggests that increasing the number of grounding objects challenges the models' detection capabilities, potentially due to limitations in how they interpret contextual information within visual scenes.</p>
+    </p>
+
+    <!-- TallyQA Results -->
+    <h3 class="title is-4">TallyQA Results</h3>
+    <p align="center">
+      <img src="static/images/results/TallyQA_result.png" alt="TallyQA Result Image"/>
+    </p>
+    <p>
+      TallyQA composes of two parts, simple counting questions and complex counting questions. The results show that the some models that perform well on simple counting questions may struggle with complex counting questions.
+      For instance, BLIP2 have a comparable performance with other more complex models, such as GPT-4, but it performance drop significantly in complex counting questions, which requires, in additional to simple object detection, more sophisticated reasoning capabilities,
+      such as pose estimation and positional reasoning. This suggests the necessity of incorporating more complex counting questions in the evaluation of visual reasoning models.
+    </p>
+    
+    <p>
+
+    </p>
+
+    <!-- TDIUC Results -->
+    <h3 class="title is-4">TDIUC Results</h3>
+    <p align="center">
+      <img src="static/images/results/TDIUC_result.png" alt="TDIUC Result Image"/>
+    </p>
+    <p>
+      [Placeholder for TDIUC results analysis]
+    </p>
+
+    <!-- DVQA Results -->
+    <h3 class="title is-4">DVQA Results</h3>
+    <p align="center">
+      <img src="static/images/results/DVQA_result.png" alt="DVQA Result Image"/>
+    </p>
+    <p>
+      [Placeholder for DVQA results analysis]
+    </p>
   </div>
 </section>
+
 
 <!-- Key Takeway -->
 <section class="section">

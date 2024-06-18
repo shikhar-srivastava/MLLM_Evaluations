@@ -95,45 +95,29 @@
       <img src="https://raw.githubusercontent.com/KevinLuJian/MLLMs_webpage/main/VQDv1.png" alt="Example Image"/>
     </p>
     <p>VQDv1 requires the model to produce multiple bounding boxes instead of localizing only one object, thereby testing general query detection skills. Unlike typical referring expression datasets, which assert that every query will correspond to only one bounding box, VQDv1 queries ask the model to generate an uncertain number of bounding boxes, from 0 to N, posing an additional challenge to the model.</p>
-    <ul>
-      <li><a href="https://github.com/KevinLuJian/MLLM-evaluation/raw/main/VQDv1_sampling.json">Download VQDv1 question-answer pairs</a></li>
-      <li><a href="http://images.cocodataset.org/zips/val2014.zip">Download VQDv1 images (val2014)</a></li>
-    </ul>
 
     <h3 class="title is-4">TallyQA</h3>
     <p align="center">
       <img src="https://raw.githubusercontent.com/KevinLuJian/MLLMs_webpage/main/Images/TallyQA/CleanShot%202024-06-16%20at%2015.07.48%402x.png" alt="Example Image"/>
     </p>
     <p>TallyQA tests models' visual grounding through counting skills. In addition to simple counting questions that the model can handle well with straightforward object detection, TallyQA also incorporates complex counting questions that demand sophisticated reasoning capabilities, such as pose estimation (e.g., "How many dogs are sitting?") and positional reasoning (e.g., "How many dogs are in front of the white building?").</p>
-    <ul>
-      <li><a href="https://github.com/KevinLuJian/MLLM-evaluation/raw/main/TallyQA_test.json">Download TallyQA testing dataset</a></li>
-      <li><a href="https://cs.stanford.edu/people/rak248/VG_100K_2/images.zip">Download TallyQA images part 1</a></li>
-      <li><a href="https://cs.stanford.edu/people/rak248/VG_100K_2/images2.zip">Download TallyQA images part 2</a></li>
-    </ul>
 
     <h3 class="title is-4">TDIUC</h3>
     <p align="center">
       <img src="static/images/TDIUC.png" alt="Example Image"/>
     </p>
     <p>TDIUC tests the models' versatility across 12 tasks, including object, attribute, and activity recognition, as well as overall scene understanding. The meaningful categories of question types permit fine-grain analysis of the models' abilities from different perspectives, allowing us to identify the specific strengths and weaknesses of each model.</p>
-    <ul>
-      <li><a href="https://github.com/KevinLuJian/MLLM-evaluation/raw/main/TDIUC_sampling.json">Download TDIUC question-answer pairs</a></li>
-      <li><a href="https://drive.google.com/file/d/1Hevf7eQNzg-qlXbfz9nPbATmQciexkDp/view?usp=share_link">Download TDIUC images</a></li>
-    </ul>
+
 
     <h3 class="title is-4">DVQA</h3>
     <p align="center">
       <img src="https://raw.githubusercontent.com/KevinLuJian/MLLMs_webpage/main/Images/DVQA/CleanShot%202024-06-16%20at%2014.32.32%402x.png" alt="Example Image"/>
     </p>
     <p>DVQA requires the models to interpret and analyze visual data in chart form, testing their ability to perform OCR and handle unusual words found in charts. The charts are all synthetically generated images, which pose additional challenges different from natural images.</p>
-    <ul>
-      <li><a href="https://github.com/KevinLuJian/MLLM-evaluation/raw/main/DVQA_sampling.json">Download DVQA question-answer pairs</a></li>
-      <li><a href="https://drive.google.com/file/d/1iOSjgbqnTiLpMFuuRa3kIs3E_RxGkKmX/view?usp=share_link">Download DVQA images</a></li>
-    </ul>
   </div>
 </section>
 
-<!-- Evaluation Script -->
+<!-- Main Result -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -141,9 +125,6 @@
         <h2 class="title is-3">Evaluation Script</h2>
         <div class="content has-text-justified">
           <p>To evaluate the performance of the models on the datasets, we provide evaluation scripts for each dataset. Please prepare the answer files in the format of the question-answer pairs we provided. You can download the evaluation scripts from this repository:</p>
-          <ul>
-            <li><a href="https://github.com/KevinLuJian/MLLM-evaluation/tree/main/eval_script">Download evaluation scripts</a></li>
-          </ul>
           <p>Detailed instructions on how to use the scripts are available in the repository.</p>
         </div>
       </div>
@@ -151,7 +132,7 @@
   </div>
 </section>
 
-<!-- Example Answer Files -->
+<!-- Key Takeway -->
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Example Answer Files</h2>

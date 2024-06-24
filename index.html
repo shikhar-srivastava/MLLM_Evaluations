@@ -2,34 +2,50 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
   <meta property="og:title" content="Revisiting Multi-Modal LLM Evaluations"/>
   <meta property="og:description" content="Revisiting Multi-Modal LLM Evaluations"/>
-  <meta property="og:url" content="MLLM_Evaluations"/>
-  <meta property="og:image" content="static/images/University_of_Rochester_seal.png" />
+  <meta property="og:url" content="https://kevinlujian.github.io/MLLM_Evaluations"/>
+
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/banner/banner_output_high_res.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
+  
   <meta name="twitter:title" content="Revisiting Multi-Modal LLM Evaluations">
   <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
   <meta name="twitter:image" content="static/images/University_of_Rochester_seal.png">
   <meta name="twitter:card" content="static/images/University_of_Rochester_seal.png">
-  <meta name="keywords" content="Revisiting Multi-Modal LLM Evaluations">
+  
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="multi-modal LLM, LLM, evaluation, tallqa, dvqa, tduic, vqdv1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
   <title>Revisiting Multi-Modal LLM Evaluations</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
 </head>
 <body>
 
@@ -62,9 +78,12 @@
               <a href="https://chriskanan.com" target="_blank">Christopher Kanan</a><sup>1</sup>
             </span>
           </div>
+
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <sup>1</sup>University of Rochester, <sup>2</sup>SRI International, <sup>3</sup>Adobe
+              <sup>1</sup>University of Rochester
+              <sup>2</sup>SRI International
+              <sup>3</sup>Adobe
               <!--<br>Neurips Workshop 2024</span>-->
               <span class="eql-cntrb"><small><br><sup>*</sup>jlu59@u.rochester.edu</small></span>
             </span>
@@ -73,30 +92,40 @@
         </div>
           </div>
           <div class="column has-text-centered">
-            <!-- <div class="publication-links">
-              <span class="link-block">
+            <div class="publication-links">
+
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </a>
               </span> -->
+              <!-- Github link -->
               <span class="link-block">
                 <a href="https://github.com/KevinLuJian/MLLM_supplemental" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Code</span>
                 </a>
               </span>
+              <!-- ArXiv abstract Link -->
               <span class="link-block">
                 <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
                 </a>
               </span>
+
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <img class="rounded" src="static/images/banner/banner_output_high_res.png" style="display: block; margin-left: auto; margin-right: auto; width: 60%;">
   </div>
 </section>
 
@@ -108,8 +137,8 @@
         <!-- <h2 class="title is-3">Abstract</h2> -->
         <div class="content has-text-justified">
           <!-- <p>With the advent of multi-modal large language models (MLLMs), datasets used for visual question answering (VQA) and referring expression comprehension have seen a resurgence. However, the most popular datasets used to evaluate MLLMs are some of the earliest ones created, and they have many known problems, including extreme bias, spurious correlations, and an inability to permit fine-grained analysis.</p> -->
-          <p>In this paper, we pioneer evaluating recent MLLMs (LLaVA 1.5, LLaVA-NeXT, BLIP2, InstructBLIP, GPT-4V, and GPT-4o) on datasets designed to address weaknesses in earlier ones. 
-          <p> We assess four VQA datasets: </p>
+          <p>In this paper, we pioneer evaluating recent MLLMs (LLaVA 1.5, LLaVA-NeXT, BLIP2, InstructBLIP, GPT-4V, and GPT-4o) on datasets designed to address weaknesses in earlier ones.
+          <br>We assess four VQA datasets:
             <ol>
               <li><strong>TDIUC</strong>, which permits fine-grained analysis on 12 question types,</li>
               <li><strong>TallyQA</strong>, which has simple and complex counting questions, and</li>

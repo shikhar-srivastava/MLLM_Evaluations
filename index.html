@@ -129,12 +129,28 @@
   </div>
 </section>
 
+<!-- Main Contributions
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered"></div>
+      <h2 class="title is-3">Main Contributions</h2>
+      <div class="content">
+        <ul>
+          <li> We create new 'slim' versions of the datasets suitable for zero-shot MLLM evaluation, and they are integrated into the widely-used LAVIS toolbox, facilitating the rapid and comprehensive assessment of future MLLMs. </li>
+          <li> We provide a robust evaluation of MLLMs on our VQA datasets, revealing previously unreported weaknesses via fine-grained analysis across various question types and tasks. </li>
+          <li> Using VQDv1, we challenge MLLMs' visual grounding capabilities by requiring them to engage in complex visual reasoning to identify multiple objects beyond the limitations of single-object referring expression datasets. </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section> -->
+
 <!-- Introduction -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <!-- <h2 class="title is-3">Abstract</h2> -->
+        <!-- <h2 class="title is-3">Contributions</h2> -->
         <div class="content has-text-justified">
           <!-- <p>With the advent of multi-modal large language models (MLLMs), datasets used for visual question answering (VQA) and referring expression comprehension have seen a resurgence. However, the most popular datasets used to evaluate MLLMs are some of the earliest ones created, and they have many known problems, including extreme bias, spurious correlations, and an inability to permit fine-grained analysis.</p> -->
           <p>In this paper, we pioneer evaluating recent MLLMs (LLaVA 1.5, LLaVA-NeXT, BLIP2, InstructBLIP, GPT-4V, and GPT-4o) on datasets designed to address weaknesses in earlier ones.
@@ -153,141 +169,127 @@
   </div>
 </section>
 
-<!-- Main Contributions -->
-<section class="section">
+<!-- Motivations Section -->
+
+<section class="section hero ">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Main Contributions</h2>
-    <div class="content">
-      <ul>
-        <li> We create new 'slim' versions of the datasets suitable for zero-shot MLLM evaluation, and they are integrated into the widely-used LAVIS toolbox, facilitating the rapid and comprehensive assessment of future MLLMs. </li>
-        <li> We provide a robust evaluation of MLLMs on our VQA datasets, revealing previously unreported weaknesses via fine-grained analysis across various question types and tasks. </li>
-        <li> Using VQDv1, we challenge MLLMs' visual grounding capabilities by requiring them to engage in complex visual reasoning to identify multiple objects beyond the limitations of single-object referring expression datasets. </li>
-      </ul>
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <!--<h2 class="title is-3">Motivation</h2>-->
+        <h2 class="title is-3">VQDv1</h3>
+          <div class="content has-text-justified">
+            <p>
+              VQDv1 requires the model to produce multiple bounding boxes instead of localizing only one object, thereby testing general query detection skills. Unlike typical referring expression datasets, which assert that every query will correspond to only one bounding box, VQDv1 queries ask the model to generate an uncertain number of bounding boxes, from 0 to N, posing an additional challenge to the model.
+            </p>
+          </div>
+        <p align="center">
+          <img src="static/images/examples/VQDv1.png" alt="Example Image"/>
+        </p>
+        <p align="center">
+          <img src="static/images/results/VQDv1_result.png" alt="VQDv1 Result Image" style="margin-bottom: 10px;">
+          <!-- <figcaption>VQDv1 Result Overview</figcaption> -->
+          <img src="static/images/results/VQDv1_graph.png" alt="VQDv1 Performance Graph" style="margin-top: 10px;">
+        </p>
+        <p>All models exhibit declined Recall when the number of bounding boxes increases, implying that these models demonstrate an inability to identify multiple objects that satisfy the query (e.g., "show me the sink," some models may only be able to identify one, but not others). 
+          This trend suggests that increasing the number of grounding objects challenges the models' detection capabilities, potentially due to limitations in how they interpret contextual information within visual scenes.</p>
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Datasets -->
-<section class="section">
+<section class="section hero ">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Datasets</h2>
-
-    <h3 class="title is-4">VQDv1</h3>
-    <p align="center">
-      <img src="static/images/examples/VQDv1.png" alt="Example Image"/>
-    </p>
-    <p>VQDv1 requires the model to produce multiple bounding boxes instead of localizing only one object, thereby testing general query detection skills. Unlike typical referring expression datasets, which assert that every query will correspond to only one bounding box, VQDv1 queries ask the model to generate an uncertain number of bounding boxes, from 0 to N, posing an additional challenge to the model.</p>
-
-    <h3 class="title is-4">TallyQA</h3>
-    <p align="center">
-      <img src="static/images/examples/tallyQA.png" alt="Example Image"/>
-    </p>
-    <p>TallyQA tests models' visual grounding through counting skills. In addition to simple counting questions that the model can handle well with straightforward object detection, TallyQA also incorporates complex counting questions that demand sophisticated reasoning capabilities, such as pose estimation (e.g., "How many dogs are sitting?") and positional reasoning (e.g., "How many dogs are in front of the white building?").</p>
-
-    <h3 class="title is-4">TDIUC</h3>
-    <p align="center">
-      <img src="static/images/examples/TDIUC.png" alt="Example Image"/>
-    </p>
-    <p>TDIUC tests the models' versatility across 12 tasks, including object, attribute, and activity recognition, as well as overall scene understanding. The meaningful categories of question types permit fine-grain analysis of the models' abilities from different perspectives, allowing us to identify the specific strengths and weaknesses of each model.</p>
-
-
-    <h3 class="title is-4">DVQA</h3>
-    <p align="center">
-      <img src="static/images/examples/DVQA.png" alt="Example Image"/>
-    </p>
-    <p>DVQA requires the models to interpret and analyze visual data in chart form, testing their ability to perform OCR and handle unusual words found in charts. The charts are all synthetically generated images, which pose additional challenges different from natural images.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">Evaluation Metrics</h2>
-    <div class="content has-text-justified">
-      <p>Evaluating the performance of models within a multi-modal framework requires the use of various metrics that reflect distinct aspects of model capabilities. Accurately understanding these metrics is essential for a precise interpretation of results and for assessing the strengths and weaknesses across different models. In this evaluation, we focus on two types of accuracy: micro accuracy and macro accuracy.</p>
-      
-      <ul>
-        <li><strong>Micro Accuracy:</strong> This metric treats each question equally, representing the traditional approach. It is calculated by dividing the number of correctly answered questions by the total number of questions. This provides a straightforward measure of overall performance across all queries.</li>
-        <li><strong>Macro Accuracy:</strong> Also referred to as Mean-Per-Type accuracy and termed Macro Accuracy for consistency in this paper, this metric ensures that each type of question contributes equally to the overall accuracy. By calculating the arithmetic mean of accuracy across different question types, this measure prevents models from inflating their overall scores by excelling in frequent question types while performing poorly on less common ones. This approach provides a balanced evaluation, highlighting models' capabilities across varied tasks.</li>
-      </ul>
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <!--<h2 class="title is-3">Motivation</h2>-->
+        <h2 class="title is-3">TallyQA</h3>
+          <div class="content has-text-justified">
+            <p>TallyQA tests models' visual grounding through counting skills. In addition to simple counting questions that the model can handle well with straightforward object detection, TallyQA also incorporates complex counting questions that demand sophisticated reasoning capabilities, such as pose estimation (e.g., "How many dogs are sitting?") and positional reasoning (e.g., "How many dogs are in front of the white building?").</p>
+          </div>
+        <p align="center">
+          <img src="static/images/examples/tallyQA.png" alt="Example Image"/>
+        </p>
+        <p align="center">
+          <img src="static/images/results/TallyQA_result.png" alt="TallyQA Result Image"/>
+        </p>
+        <p>
+          TallyQA composes of two parts, simple counting questions and complex counting questions. The results show that the some models that perform well on simple counting questions may struggle with complex counting questions.
+          For instance, BLIP2 have a comparable performance with other more complex models, such as GPT-4, but it performance drop significantly in complex counting questions, which requires, in additional to simple object detection, more sophisticated reasoning capabilities,
+          such as pose estimation and positional reasoning. This suggests the necessity of incorporating more complex counting questions in the evaluation of visual reasoning models.
+        </p>
+        <p align="center">
+          <img src="static/images/results/TallyQA_detail.png" alt="TallyQA Result Image"/>
+        </p>
+        <p>The testing metrics of TallyQA is somewhat allign with VQDv1, the ability to count multiply objects the foundations for 
+          grounding multiple objects in the image. Fig 8 and 9 shows that most model demonstrate performance decay wehn counting multiply objects.
+          This is consistent with the results in VQDv1, where model generally perform less well on multiply object detections. 
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Main Results Section -->
-<section class="section">
+<section class="section hero ">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Main Results</h2>
-
-    <!-- VQDv1 Results -->
-    <h3 class="title is-4">VQDv1 Results</h3>
-    <p align="center">
-      <img src="static/images/results/VQDv1_result.png" alt="VQDv1 Result Image" style="margin-bottom: 10px;">
-      <figcaption>VQDv1 Result Overview</figcaption>
-      <img src="static/images/results/VQDv1_graph.png" alt="VQDv1 Performance Graph" style="margin-top: 10px;">
-    </p>
-    <p>All models exhibit declined Recall when the number of bounding boxes increases, implying that these models demonstrate an inability to identify multiple objects that satisfy the query (e.g., "show me the sink," some models may only be able to identify one, but not others). 
-      This trend suggests that increasing the number of grounding objects challenges the models' detection capabilities, potentially due to limitations in how they interpret contextual information within visual scenes.</p>
-    </p>
-
-    <!-- TallyQA Results -->
-    <h3 class="title is-4">TallyQA Results</h3>
-    <p align="center">
-      <img src="static/images/results/TallyQA_result.png" alt="TallyQA Result Image"/>
-    </p>
-    <p>
-      TallyQA composes of two parts, simple counting questions and complex counting questions. The results show that the some models that perform well on simple counting questions may struggle with complex counting questions.
-      For instance, BLIP2 have a comparable performance with other more complex models, such as GPT-4, but it performance drop significantly in complex counting questions, which requires, in additional to simple object detection, more sophisticated reasoning capabilities,
-      such as pose estimation and positional reasoning. This suggests the necessity of incorporating more complex counting questions in the evaluation of visual reasoning models.
-    </p>
-    <p align="center">
-      <img src="static/images/results/TallyQA_detail.png" alt="TallyQA Result Image"/>
-    </p>
-    <p>The testing metrics of TallyQA is somewhat allign with VQDv1, the ability to count multiply objects the foundations for 
-      grounding multiple objects in the image. Fig 8 and 9 shows that most model demonstrate performance decay wehn counting multiply objects.
-      This is consistent with the results in VQDv1, where model generally perform less well on multiply object detections. 
-    </p>
-
-    <!-- TDIUC Results -->
-    <h3 class="title is-4">TDIUC Results</h3>
-    <p align="center">
-      <img src="static/images/results/TDIUC_result.png" alt="TDIUC Result Image"/>
-    </p>
-    <p>
-      The results in TDIUC provide us the detail performance of each model on different question types. 
-      The results show that the models have different strengths and weaknesses on different question types. 
-      A few key takeaway, all models demonstrate inability in positional reasoning. LLaVANext has the highest performance in almost all question types, even surpassing
-      previous SoTA VQA algorithm MuRel.
-    </p>
-
-    <!-- DVQA Results -->
-    <h3 class="title is-4">DVQA Results</h3>
-    <p align="center">
-      <img src="static/images/results/DVQA_result.png" alt="DVQA Result Image"/>
-    </p>
-    <p>
-      The results for DVQA shows that some model, while perform well on datasets with natural images, may struggle with synthetic images. The DVQA datasets are all synthetic images. The bars are generated
-      with random color and styles, with many abbreivations involves. Most models are espicially struggle in reasoning and data retrieval quesitons. 
-    </p>
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <!--<h2 class="title is-3">Motivation</h2>-->
+        <h2 class="title is-3">TDIUC</h3>
+        <div class="content has-text-justified">
+          <p>TDIUC tests the models' versatility across 12 tasks, including object, attribute, and activity recognition, as well as overall scene understanding. The meaningful categories of question types permit fine-grain analysis of the models' abilities from different perspectives, allowing us to identify the specific strengths and weaknesses of each model.</p>
+        </div>
+        <p align="center">
+          <img src="static/images/examples/TDIUC.png" alt="Example Image"/>
+        </p>
+        <p align="center">
+          <img src="static/images/results/TDIUC_result.png" alt="TDIUC Result Image"/>
+        </p>
+        <p>
+          The results in TDIUC provide us the detail performance of each model on different question types. 
+          The results show that the models have different strengths and weaknesses on different question types. 
+          A few key takeaway, all models demonstrate inability in positional reasoning. LLaVANext has the highest performance in almost all question types, even surpassing
+          previous SoTA VQA algorithm MuRel.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
 
+<section class="section hero ">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <!--<h2 class="title is-3">Motivation</h2>-->
+        <h2 class="title is-3">DVQA</h3>
+        <div class="content has-text-justified">
+          <p>DVQA requires the models to interpret and analyze visual data in chart form, testing their ability to perform OCR and handle unusual words found in charts. The charts are all synthetically generated images, which pose additional challenges different from natural images.</p>
+        </div>
+        <p align="center">
+          <img src="static/images/examples/DVQA.png" alt="Example Image"/>
+        </p>
+        
+        <p align="center">
+          <img src="static/images/results/DVQA_result.png" alt="DVQA Result Image"/>
+        </p>
+        <p>
+          The results for DVQA shows that some model, while perform well on datasets with natural images, may struggle with synthetic images. The DVQA datasets are all synthetic images. The bars are generated
+          with random color and styles, with many abbreivations involves. Most models are espicially struggle in reasoning and data retrieval quesitons. 
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- License -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">License</h2>
-    <p>&copy; 2024 Multi-Modal LLM Evaluations. All rights reserved.</p>
-  </div>
-</section>
-
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column is-8">
+      <div class="column is-12">
         <div class="content">
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page. You are free to borrow the structure of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page. This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
         </div>
       </div>

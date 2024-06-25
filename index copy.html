@@ -156,10 +156,10 @@
           <p>In this paper, we pioneer evaluating recent MLLMs (LLaVA 1.5, LLaVA-NeXT, BLIP2, InstructBLIP, GPT-4V, and GPT-4o) on datasets designed to address weaknesses in earlier ones.
           <br>We assess four VQA datasets:
             <ol>
-              <li><a href="#tdiuc"><strong style="color: blue;">TDIUC</strong></a>, which permits fine-grained analysis on 12 question types,</li>
-              <li><a href="#tallyqa"><strong style="color: blue;">TallyQA</strong></a>, which has simple and complex counting questions, and</li>
-              <li><a href="#dvqa"><strong style="color: blue;">DVQA</strong></a>, which requires optical character recognition for chart understanding.</li>
-              <li><a href="#vqdv1"><strong style="color: blue;">VQDv1</strong></a>, which requires identifying all image regions that satisfy a given query. </li>
+              <li><strong>TDIUC</strong>, which permits fine-grained analysis on 12 question types,</li>
+              <li><strong>TallyQA</strong>, which has simple and complex counting questions, and</li>
+              <li><strong>DVQA</strong>, which requires optical character recognition for chart understanding.</li>
+              <li><strong>VQDv1</strong>, which requires identifying all image regions that satisfy a given query. </li>
             </ol>
           </p>
           <p>Our experiments reveal the weaknesses of many MLLMs that have not previously been reported. Our code is integrated into the widely used LAVIS framework for MLLM evaluation, enabling the rapid assessment of future MLLMs.</p>
@@ -174,7 +174,7 @@
 
 
 <!--Datasets Start here-->
-<section id="vqdv1" class="section hero">
+<section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column">
@@ -201,7 +201,7 @@
   </div>
 </section>
 
-<section id="tallyqa" class="section hero">
+<section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column">
@@ -209,19 +209,19 @@
 
         <div class="content has-text-left">
           <p>
-            <b style="color: blue;">Description</b>: TallyQA tests models' visual grounding through counting skills. In addition to simple counting questions that the model can handle well with straightforward object detection, TallyQA also incorporates complex counting questions that demand sophisticated reasoning capabilities, such as pose estimation (e.g., "How many dogs are sitting?") and positional reasoning (e.g., "How many dogs are in front of the white building?").
-          </p>
-          <p>
             <center>
               <img src="static/images/examples/tallyQA.png" alt="Example Image" width="100%"/>
             </center>
           </p>
           <p>
-            <b style="color: blue;">Results</b>: TallyQA composes of two parts, simple counting questions and complex counting questions. The results show that the some models that perform well on simple counting questions may struggle with complex counting questions. For instance, BLIP2 have a comparable performance with other more complex models, such as GPT-4, but it performance drop significantly in complex counting questions, which requires, in additional to simple object detection, more sophisticated reasoning capabilities, such as pose estimation and positional reasoning. This suggests the necessity of incorporating more complex counting questions in the evaluation of visual reasoning models.
+            <b style="color: blue;">Description</b>: TallyQA tests models' visual grounding through counting skills. In addition to simple counting questions that the model can handle well with straightforward object detection, TallyQA also incorporates complex counting questions that demand sophisticated reasoning capabilities, such as pose estimation (e.g., "How many dogs are sitting?") and positional reasoning (e.g., "How many dogs are in front of the white building?").
           </p>
           <center>
             <img src="static/images/tables/tallqa_table.png" alt="TallyQA Result Image" style="margin-bottom: 10px;">
           </center>
+          <p>
+            <b style="color: blue;">Results</b>: TallyQA composes of two parts, simple counting questions and complex counting questions. The results show that the some models that perform well on simple counting questions may struggle with complex counting questions. For instance, BLIP2 have a comparable performance with other more complex models, such as GPT-4, but it performance drop significantly in complex counting questions, which requires, in additional to simple object detection, more sophisticated reasoning capabilities, such as pose estimation and positional reasoning. This suggests the necessity of incorporating more complex counting questions in the evaluation of visual reasoning models.
+          </p>
           <center>
             <img src="static/images/graphs/accuracy_distribution_complex.png" alt="TallyQA Result Image" style="margin-top: 10px;" width="50%"><img src="static/images/graphs/accuracy_distribution_simple.png" alt="TallyQA Result Image" style="margin-top: 10px;" width="50%">
           </center>
@@ -232,7 +232,7 @@
   </div>
 </section>
 
-<section id="tdiuc" class="section hero">
+<section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column">
@@ -240,26 +240,26 @@
 
         <div class="content has-text-left">
           <p>
-            <b style="color: blue;">Description</b>: TDIUC tests the models' versatility across 12 tasks, including object, attribute, and activity recognition, as well as overall scene understanding. The meaningful categories of question types permit fine-grain analysis of the models' abilities from different perspectives, allowing us to identify the specific strengths and weaknesses of each model.
-          </p>
-          <p>
             <center>
               <img src="static/images/examples/TDIUC.png" alt="Example Image" width="100%"/>
             </center>
           </p>
           <p>
-            <b style="color: blue;">Results</b>: The results in TDIUC provide us the detail performance of each model on different question types. The results show that the models have different strengths and weaknesses on different question types. A few key takeaways: all models demonstrate inability in positional reasoning. LLaVANext has the highest performance in almost all question types, even surpassing previous SoTA VQA algorithm MuRel.
+            <b style="color: blue;">Description</b>: TDIUC tests the models' versatility across 12 tasks, including object, attribute, and activity recognition, as well as overall scene understanding. The meaningful categories of question types permit fine-grain analysis of the models' abilities from different perspectives, allowing us to identify the specific strengths and weaknesses of each model.
           </p>
           <center>
             <img src="static/images/tables/tdiuc_table.png" alt="TDIUC Result Image" style="margin-bottom: 10px;">
           </center>
+          <p>
+            <b style="color: blue;">Results</b>: The results in TDIUC provide us the detail performance of each model on different question types. The results show that the models have different strengths and weaknesses on different question types. A few key takeaways: all models demonstrate inability in positional reasoning. LLaVANext has the highest performance in almost all question types, even surpassing previous SoTA VQA algorithm MuRel.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="dvqa" class="section hero">
+<section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column">
@@ -267,19 +267,19 @@
 
         <div class="content has-text-left">
           <p>
-            <b style="color: blue;">Description</b>: DVQA requires the models to interpret and analyze visual data in chart form, testing their ability to perform OCR and handle unusual words found in charts. The charts are all synthetically generated images, which pose additional challenges different from natural images.
-          </p>
-          <p>
             <center>
               <img src="static/images/examples/DVQA.png" alt="Example Image" width="100%"/>
             </center>
           </p>
           <p>
-            <b style="color: blue;">Results</b>: The results for DVQA show that some models, while performing well on datasets with natural images, may struggle with synthetic images. The DVQA datasets are all synthetic images. The bars are generated with random colors and styles, with many abbreviations involved. Most models especially struggle in reasoning and data retrieval questions.
+            <b style="color: blue;">Description</b>: DVQA requires the models to interpret and analyze visual data in chart form, testing their ability to perform OCR and handle unusual words found in charts. The charts are all synthetically generated images, which pose additional challenges different from natural images.
           </p>
           <center>
             <img src="static/images/tables/dvqa_table.png" alt="DVQA Result Image" style="margin-bottom: 10px;">
           </center>
+          <p>
+            <b style="color: blue;">Results</b>: The results for DVQA show that some models, while performing well on datasets with natural images, may struggle with synthetic images. The DVQA datasets are all synthetic images. The bars are generated with random colors and styles, with many abbreviations involved. Most models especially struggle in reasoning and data retrieval questions.
+          </p>
         </div>
       </div>
     </div>

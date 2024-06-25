@@ -171,112 +171,116 @@
 
 <!-- Motivations Section -->
 
-<section class="section hero ">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <!--<h2 class="title is-3">Motivation</h2>-->
-        <h2 class="title is-3">VQDv1</h3>
-          <div class="content has-text-justified">
-            <p>
-              VQDv1 requires the model to produce multiple bounding boxes instead of localizing only one object, thereby testing general query detection skills. Unlike typical referring expression datasets, which assert that every query will correspond to only one bounding box, VQDv1 queries ask the model to generate an uncertain number of bounding boxes, from 0 to N, posing an additional challenge to the model.
-            </p>
-          </div>
-        <p align="center">
-          <img src="static/images/examples/VQDv1.png" alt="Example Image"/>
-        </p>
-        <p align="center">
-          <img src="static/images/results/VQDv1_result.png" alt="VQDv1 Result Image" style="margin-bottom: 10px;">
-          <!-- <figcaption>VQDv1 Result Overview</figcaption> -->
-          <img src="static/images/results/VQDv1_graph.png" alt="VQDv1 Performance Graph" style="margin-top: 10px;">
-        </p>
-        <p>All models exhibit declined Recall when the number of bounding boxes increases, implying that these models demonstrate an inability to identify multiple objects that satisfy the query (e.g., "show me the sink," some models may only be able to identify one, but not others). 
-          This trend suggests that increasing the number of grounding objects challenges the models' detection capabilities, potentially due to limitations in how they interpret contextual information within visual scenes.</p>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section hero ">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <!--<h2 class="title is-3">Motivation</h2>-->
-        <h2 class="title is-3">TallyQA</h3>
-          <div class="content has-text-justified">
-            <p>TallyQA tests models' visual grounding through counting skills. In addition to simple counting questions that the model can handle well with straightforward object detection, TallyQA also incorporates complex counting questions that demand sophisticated reasoning capabilities, such as pose estimation (e.g., "How many dogs are sitting?") and positional reasoning (e.g., "How many dogs are in front of the white building?").</p>
-          </div>
-        <p align="center">
-          <img src="static/images/examples/tallyQA.png" alt="Example Image"/>
-        </p>
-        <p align="center">
-          <img src="static/images/results/TallyQA_result.png" alt="TallyQA Result Image"/>
-        </p>
-        <p>
-          TallyQA composes of two parts, simple counting questions and complex counting questions. The results show that the some models that perform well on simple counting questions may struggle with complex counting questions.
-          For instance, BLIP2 have a comparable performance with other more complex models, such as GPT-4, but it performance drop significantly in complex counting questions, which requires, in additional to simple object detection, more sophisticated reasoning capabilities,
-          such as pose estimation and positional reasoning. This suggests the necessity of incorporating more complex counting questions in the evaluation of visual reasoning models.
-        </p>
-        <p align="center">
-          <img src="static/images/results/TallyQA_detail.png" alt="TallyQA Result Image"/>
-        </p>
-        <p>The testing metrics of TallyQA is somewhat allign with VQDv1, the ability to count multiply objects the foundations for 
-          grounding multiple objects in the image. Fig 8 and 9 shows that most model demonstrate performance decay wehn counting multiply objects.
-          This is consistent with the results in VQDv1, where model generally perform less well on multiply object detections. 
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section hero ">
+<!--Datasets Start here-->
+<section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <!--<h2 class="title is-3">Motivation</h2>-->
-        <h2 class="title is-3">TDIUC</h3>
-        <div class="content has-text-justified">
-          <p>TDIUC tests the models' versatility across 12 tasks, including object, attribute, and activity recognition, as well as overall scene understanding. The meaningful categories of question types permit fine-grain analysis of the models' abilities from different perspectives, allowing us to identify the specific strengths and weaknesses of each model.</p>
+        <h2 class="title is-3">VQDv1</h2>
+
+        <div class="content has-text-left">
+          <p>
+            <b style="color: blue;">Description</b>: VQDv1 requires the model to produce multiple bounding boxes instead of localizing only one object, thereby testing general query detection skills. Unlike typical referring expression datasets, which assert that every query will correspond to only one bounding box, VQDv1 queries ask the model to generate an uncertain number of bounding boxes, from 0 to N, posing an additional challenge to the model.
+          </p>
+          <center>
+            <img src="static/images/examples/VQDv1.png" alt="Example Image" width="100%"/>
+          </center>
+          <p>
+            <b style="color: blue;">Results</b>: All models exhibit declined Recall when the number of bounding boxes increases, implying that these models demonstrate an inability to identify multiple objects that satisfy the query. 
+          </p>
+          <center>
+            <img src="static/images/tables/vqdv1_table.png" alt="VQDv1 Result Image" style="margin-bottom: 10px;">
+            <img src="static/images/graphs/vqd-precision.png" alt="VQDv1 Performance Graph" style="margin-top: 10px;" width="50%"><img src="static/images/graphs/vqd-recall.png" alt="VQDv1 Performance Graph" style="margin-top: 10px;" width="50%">
+          </center>
+          <br> This trend suggests that increasing the number of grounding objects challenges the models' detection capabilities, potentially due to limitations in how they interpret contextual information within visual scenes.
         </div>
-        <p align="center">
-          <img src="static/images/examples/TDIUC.png" alt="Example Image"/>
-        </p>
-        <p align="center">
-          <img src="static/images/results/TDIUC_result.png" alt="TDIUC Result Image"/>
-        </p>
-        <p>
-          The results in TDIUC provide us the detail performance of each model on different question types. 
-          The results show that the models have different strengths and weaknesses on different question types. 
-          A few key takeaway, all models demonstrate inability in positional reasoning. LLaVANext has the highest performance in almost all question types, even surpassing
-          previous SoTA VQA algorithm MuRel.
-        </p>
       </div>
     </div>
   </div>
 </section>
 
-
-<section class="section hero ">
+<section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <!--<h2 class="title is-3">Motivation</h2>-->
-        <h2 class="title is-3">DVQA</h3>
-        <div class="content has-text-justified">
-          <p>DVQA requires the models to interpret and analyze visual data in chart form, testing their ability to perform OCR and handle unusual words found in charts. The charts are all synthetically generated images, which pose additional challenges different from natural images.</p>
+        <h2 class="title is-3">TallyQA</h2>
+
+        <div class="content has-text-left">
+          <p>
+            <center>
+              <img src="static/images/examples/tallyQA.png" alt="Example Image" width="100%"/>
+            </center>
+          </p>
+          <p>
+            <b style="color: blue;">Description</b>: TallyQA tests models' visual grounding through counting skills. In addition to simple counting questions that the model can handle well with straightforward object detection, TallyQA also incorporates complex counting questions that demand sophisticated reasoning capabilities, such as pose estimation (e.g., "How many dogs are sitting?") and positional reasoning (e.g., "How many dogs are in front of the white building?").
+          </p>
+          <center>
+            <img src="static/images/tables/tallqa_table.png" alt="TallyQA Result Image" style="margin-bottom: 10px;">
+          </center>
+          <p>
+            <b style="color: blue;">Results</b>: TallyQA composes of two parts, simple counting questions and complex counting questions. The results show that the some models that perform well on simple counting questions may struggle with complex counting questions. For instance, BLIP2 have a comparable performance with other more complex models, such as GPT-4, but it performance drop significantly in complex counting questions, which requires, in additional to simple object detection, more sophisticated reasoning capabilities, such as pose estimation and positional reasoning. This suggests the necessity of incorporating more complex counting questions in the evaluation of visual reasoning models.
+          </p>
+          <center>
+            <img src="static/images/graphs/accuracy_distribution_complex.png" alt="TallyQA Result Image" style="margin-top: 10px;" width="50%"><img src="static/images/graphs/accuracy_distribution_simple.png" alt="TallyQA Result Image" style="margin-top: 10px;" width="50%">
+          </center>
+          <br> The testing metrics of TallyQA is somewhat aligned with VQDv1, the ability to count multiple objects forms the foundation for grounding multiple objects in the image. Fig 8 and 9 show that most models demonstrate performance decay when counting multiple objects. This is consistent with the results in VQDv1, where models generally perform less well on multiple object detections.
         </div>
-        <p align="center">
-          <img src="static/images/examples/DVQA.png" alt="Example Image"/>
-        </p>
-        
-        <p align="center">
-          <img src="static/images/results/DVQA_result.png" alt="DVQA Result Image"/>
-        </p>
-        <p>
-          The results for DVQA shows that some model, while perform well on datasets with natural images, may struggle with synthetic images. The DVQA datasets are all synthetic images. The bars are generated
-          with random color and styles, with many abbreivations involves. Most models are espicially struggle in reasoning and data retrieval quesitons. 
-        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">TDIUC</h2>
+
+        <div class="content has-text-left">
+          <p>
+            <center>
+              <img src="static/images/examples/TDIUC.png" alt="Example Image" width="100%"/>
+            </center>
+          </p>
+          <p>
+            <b style="color: blue;">Description</b>: TDIUC tests the models' versatility across 12 tasks, including object, attribute, and activity recognition, as well as overall scene understanding. The meaningful categories of question types permit fine-grain analysis of the models' abilities from different perspectives, allowing us to identify the specific strengths and weaknesses of each model.
+          </p>
+          <center>
+            <img src="static/images/tables/tdiuc_table.png" alt="TDIUC Result Image" style="margin-bottom: 10px;">
+          </center>
+          <p>
+            <b style="color: blue;">Results</b>: The results in TDIUC provide us the detail performance of each model on different question types. The results show that the models have different strengths and weaknesses on different question types. A few key takeaways: all models demonstrate inability in positional reasoning. LLaVANext has the highest performance in almost all question types, even surpassing previous SoTA VQA algorithm MuRel.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">DVQA</h2>
+
+        <div class="content has-text-left">
+          <p>
+            <center>
+              <img src="static/images/examples/DVQA.png" alt="Example Image" width="100%"/>
+            </center>
+          </p>
+          <p>
+            <b style="color: blue;">Description</b>: DVQA requires the models to interpret and analyze visual data in chart form, testing their ability to perform OCR and handle unusual words found in charts. The charts are all synthetically generated images, which pose additional challenges different from natural images.
+          </p>
+          <center>
+            <img src="static/images/tables/dvqa_table.png" alt="DVQA Result Image" style="margin-bottom: 10px;">
+          </center>
+          <p>
+            <b style="color: blue;">Results</b>: The results for DVQA show that some models, while performing well on datasets with natural images, may struggle with synthetic images. The DVQA datasets are all synthetic images. The bars are generated with random colors and styles, with many abbreviations involved. Most models especially struggle in reasoning and data retrieval questions.
+          </p>
+        </div>
       </div>
     </div>
   </div>

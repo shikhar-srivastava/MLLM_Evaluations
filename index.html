@@ -201,14 +201,22 @@
             <b style="color: blue;">Description</b>: VQDv1 requires the model to produce multiple bounding boxes instead of localizing only one object, thereby testing general query detection skills. Unlike typical referring expression datasets, which assert that every query will correspond to only one bounding box, VQDv1 queries ask the model to generate an uncertain number of bounding boxes, from 0 to N, posing an additional challenge to the model.
           </p>
           <center>
-            <img src="static/images/examples/VQDv1.png" alt="Example Image" width="100%"/>
+            <figure>
+              <img src="static/images/examples/VQDv1.png" alt="Example Image" width="100%"/>
+              <figcaption style="font-size: 0.75em; color: grey;">Figure 1: Example images of VQDv1 with multiple bounding boxes.</figcaption>
+            </figure>
           </center>
           <p>
             <b style="color: blue;">Results</b>: All models exhibit declined Recall when the number of bounding boxes increases, implying that these models demonstrate an inability to identify multiple objects that satisfy the query. 
           </p>
           <center>
-            <img src="static/images/tables/vqdv1_table.png" alt="VQDv1 Result Image" style="margin-bottom: 10px;">
-            <img src="static/images/graphs/vqd-precision.png" alt="VQDv1 Performance Graph" style="margin-top: 10px;" width="40%"><img src="static/images/graphs/vqd-recall.png" alt="VQDv1 Performance Graph" style="margin-top: 10px;" width="40%">
+            <figure>
+              <img src="static/images/tables/vqdv1_table.png" alt="VQDv1 Result Image" style="margin-bottom: 10px;">
+              <figcaption style="font-size: 0.75em; color: grey;">Table 1: Performance comparison of various Multi-Modal LLMs on VQDv1.</figcaption>
+              <img src="static/images/graphs/vqd-precision.png" alt="VQDv1 Performance Graph" style="margin-top: 10px;" width="40%">
+              <img src="static/images/graphs/vqd-recall.png" alt="VQDv1 Performance Graph" style="margin-top: 10px;" width="40%">
+              <figcaption style="font-size: 0.75em; color: grey;">Figure 2: Precision and recall graphs for VQDv1.</figcaption>
+            </figure>
           </center>
           <br> This trend suggests that increasing the number of grounding objects challenges the models' detection capabilities, potentially due to limitations in how they interpret contextual information within visual scenes.
         </div>
@@ -227,19 +235,22 @@
           <p>
             <b style="color: blue;">Description</b>: TallyQA tests models' visual grounding through counting skills. In addition to simple counting questions that the model can handle well with straightforward object detection, TallyQA also incorporates complex counting questions that demand sophisticated reasoning capabilities, such as pose estimation (e.g., "How many dogs are sitting?") and positional reasoning (e.g., "How many dogs are in front of the white building?").
           </p>
-          <p>
-            <center>
+          <center>
+            <figure>
               <img src="static/images/examples/tallyQA.png" alt="Example Image" width="100%"/>
-            </center>
-          </p>
+              <figcaption style="font-size: 0.75em; color: grey;">Figure 3: Example images from TallyQA showing various counting challenges.</figcaption>
+            </figure>
+          </center>
           <p>
             <b style="color: blue;">Results</b>: TallyQA composes of two parts, simple counting questions and complex counting questions. The results show that the some models that perform well on simple counting questions may struggle with complex counting questions. For instance, BLIP2 have a comparable performance with other more complex models, such as GPT-4, but it performance drop significantly in complex counting questions, which requires, in additional to simple object detection, more sophisticated reasoning capabilities, such as pose estimation and positional reasoning.
           </p>
           <center>
-            <img src="static/images/tables/tallqa_table.png" alt="TallyQA Result Image" style="margin-bottom: 10px;">
-          </center>
-          <center>
-            <img src="static/images/graphs/accuracy_distribution_complex.png" alt="TallyQA Result Image" style="margin-top: 10px;" width="50%"><img src="static/images/graphs/accuracy_distribution_simple.png" alt="TallyQA Result Image" style="margin-top: 10px;" width="50%">
+            <figure>
+              <img src="static/images/tables/tallqa_table.png" alt="TallyQA Result Image" style="margin-bottom: 10px;">
+              <figcaption style="font-size: 0.75em; color: grey;">Table 2: Results on TallyQA. For Micro Acc., best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold. For Macro Acc. and RMSE, the highest value is bolded. For comparison, the result from SMoLA is the current best on TallyQA.</figcaption>
+              <img src="static/images/graphs/accuracy_distribution_complex.png" alt="TallyQA Complex Counting Performance Graph" style="margin-top: 10px;" width="50%"><img src="static/images/graphs/accuracy_distribution_simple.png" alt="TallyQA Simple Counting Performance Graph" style="margin-top: 10px;" width="50%">
+              <figcaption style="font-size: 0.75em; color: grey;">Figure 4: Accuracy distribution by correct answer, for complex and simple counting questions in TallyQA.</figcaption>
+            </figure>
           </center>
           <br> This suggests the necessity of incorporating more complex counting questions in the evaluation of visual reasoning models.
         </div>
@@ -258,16 +269,20 @@
           <p>
             <b style="color: blue;">Description</b>: TDIUC tests the models' versatility across 12 tasks, including object, attribute, and activity recognition, as well as overall scene understanding. The meaningful categories of question types permit fine-grain analysis of the models' abilities from different perspectives, allowing us to identify the specific strengths and weaknesses of each model.
           </p>
-          <p>
-            <center>
+          <center>
+            <figure>
               <img src="static/images/examples/TDIUC.png" alt="Example Image" width="100%"/>
-            </center>
-          </p>
+              <figcaption style="font-size: 0.75em; color: grey;">Figure 5: Example images from TDIUC showing various question types.</figcaption>
+            </figure>
+          </center>
           <p>
-            <b style="color: blue;">Results</b>: The results in TDIUC provide us the detail performance of each model on different question types. The results show that the models have different strengths and weaknesses on different question types. A few key takeaways: all models demonstrate inability in positional reasoning. LLaVANext has the highest performance in almost all question types, even surpassing previous SoTA VQA algorithm MuRel.
+            <b style="color: blue;">Results</b>: The results in TDIUC provide us the detailed performance of each model on different question types. The results show that the models have different strengths and weaknesses on different question types. A few key takeaways: all models demonstrate inability in positional reasoning. LLaVANext has the highest performance in almost all question types, even surpassing previous SoTA VQA algorithm MuRel.
           </p>
           <center>
-            <img src="static/images/tables/tdiuc_table.png" alt="TDIUC Result Image" style="margin-bottom: 10px;">
+            <figure>
+              <img src="static/images/tables/tdiuc_table.png" alt="TDIUC Result Image" style="margin-bottom: 10px;">
+              <figcaption style="font-size: 0.75em; color: grey;">Table 3: Accuracy on TDIUC for each question type. ‘L’ denotes LLaVA. Best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold, except for Macro. Acc., where the max is bolded. For comparison, MuRel is the previous best result from training on TDIUC.</figcaption>
+            </figure>
           </center>
         </div>
       </div>
@@ -285,16 +300,20 @@
           <p>
             <b style="color: blue;">Description</b>: DVQA requires the models to interpret and analyze visual data in chart form, testing their ability to perform OCR and handle unusual words found in charts. The charts are all synthetically generated images, which pose additional challenges different from natural images.
           </p>
-          <p>
-            <center>
+          <center>
+            <figure>
               <img src="static/images/examples/DVQA.png" alt="Example Image" width="100%"/>
-            </center>
-          </p>
+              <figcaption style="font-size: 0.75em; color: grey;">Figure 6: Example images from DVQA showing various chart types.</figcaption>
+            </figure>
+          </center>
           <p>
             <b style="color: blue;">Results</b>: The results for DVQA show that some models, while performing well on datasets with natural images, may struggle with synthetic images. The DVQA datasets are all synthetic images. The bars are generated with random colors and styles, with many abbreviations involved. Most models especially struggle in reasoning and data retrieval questions.
           </p>
           <center>
-            <img src="static/images/tables/dvqa_table.png" alt="DVQA Result Image" style="margin-bottom: 10px;">
+            <figure>
+              <img src="static/images/tables/dvqa_table.png" alt="DVQA Result Image" style="margin-bottom: 10px;">
+              <figcaption style="font-size: 0.75em; color: grey;">Table 4: Percentage (%) accuracy results on DVQA. Best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold, except for Macro. Acc., where the max is bolded. For comparison, PReFIL and Human results correspond to performance on Test-Novel, where PReFIL uses Improved OCR. PReFIL is a DVQA system trained on DVQA’s training set.</figcaption>
+            </figure>
           </center>
         </div>
       </div>

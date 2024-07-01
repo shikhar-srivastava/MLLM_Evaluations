@@ -174,7 +174,7 @@
         <!-- <h2 class="title is-2">Contributions</h2> -->
         <div class="content has-text-justified">
           <!-- <p>With the advent of multi-modal large language models (MLLMs), datasets used for visual question answering (VQA) and referring expression comprehension have seen a resurgence. However, the most popular datasets used to evaluate MLLMs are some of the earliest ones created, and they have many known problems, including extreme bias, spurious correlations, and an inability to permit fine-grained analysis.</p> -->
-          <p>In this paper, we pioneer evaluating recent MLLMs (LLaVA 1.5, LLaVA-NeXT, BLIP2, InstructBLIP, GPT-4V, and GPT-4o) on datasets designed to address weaknesses in earlier ones.
+          <p>In this paper, we pioneer evaluating recent MLLMs (LLaVA-1.5, LLaVA-NeXT, BLIP2, InstructBLIP, GPT-4V, and GPT-4o) on datasets designed to address weaknesses, such as extreme bias, spurious correlations and lack of fine-grained analysis in earlier datasets like VQAv2 and RefCOCO.
           <br>We assess four VQA datasets:
             <ol>
               <li><a href="#tdiuc"><strong style="color: blue;">TDIUC</strong></a>, which permits fine-grained analysis on 12 question types,</li>
@@ -183,7 +183,7 @@
               <li><a href="#vqdv1"><strong style="color: blue;">VQDv1</strong></a>, which requires identifying all image regions that satisfy a given query. </li>
             </ol>
           </p>
-          <p>Our experiments reveal the weaknesses of many MLLMs that have not previously been reported. Our code is integrated into the widely used LAVIS framework for MLLM evaluation, enabling the rapid assessment of future MLLMs.</p>
+          <p>Our experiments reveal the weaknesses of many MLLMs that have not previously been reported. Our code is integrated into a fork of the widely used LAVIS framework for MLLM evaluation, enabling the rapid assessment of future MLLMs.</p>
         </div>
       </div>
     </div>
@@ -208,7 +208,7 @@
           <center>
             <figure>
               <img src="static/images/examples/VQDv1.png" alt="Example Image" width="100%"/>
-              <figcaption style="font-size: 0.75em; color: grey;">Figure 1: Example images of VQDv1 with multiple bounding boxes.</figcaption>
+              <figcaption style="font-size: 0.75em; color: grey;">Example images of VQDv1 with multiple bounding boxes.</figcaption>
             </figure>
           </center>
           <p>
@@ -217,9 +217,9 @@
           <center>
             <figure>
               <img src="static/images/tables/vqdv1_table.png" alt="VQDv1 Result Image" style="margin-bottom: 10px;">
-              <figcaption style="font-size: 0.75em; color: grey;">Table 1: Performance comparison of various Multi-Modal LLMs on VQDv1.</figcaption>
+              <figcaption style="font-size: 0.75em; color: grey;">Performance comparison of various Multi-Modal LLMs on VQDv1.</figcaption>
               <img src="static/images/graphs/vqd-precision.png" alt="VQDv1 Performance Graph" style="margin-top: 10px;" width="45%"><img src="static/images/graphs/vqd-recall.png" alt="VQDv1 Performance Graph" style="margin-top: 10px;" width="45%">
-              <figcaption style="font-size: 0.75em; color: grey;">Figure 2: Precision and recall graphs for VQDv1.</figcaption>
+              <figcaption style="font-size: 0.75em; color: grey;">Precision and recall graphs for VQDv1.</figcaption>
             </figure>
           </center>
           <br> This trend suggests that increasing the number of grounding objects challenges the models' detection capabilities, potentially due to limitations in how they interpret contextual information within visual scenes.
@@ -242,18 +242,23 @@
           <center>
             <figure>
               <img src="static/images/examples/tallyQA.png" alt="Example Image" width="100%"/>
-              <figcaption style="font-size: 0.75em; color: grey;">Figure 3: Example images from TallyQA showing various counting challenges.</figcaption>
+              <figcaption style="font-size: 0.75em; color: grey;">Example images from TallyQA showing various counting challenges.</figcaption>
             </figure>
           </center>
           <p>
-            <b style="color: blue;">Results</b>: TallyQA composes of two parts, simple counting questions and complex counting questions. The results show that the some models that perform well on simple counting questions may struggle with complex counting questions. For instance, BLIP2 have a comparable performance with other more complex models, such as GPT-4, but it performance drop significantly in complex counting questions, which requires, in additional to simple object detection, more sophisticated reasoning capabilities, such as pose estimation and positional reasoning.
+            <b style="color: blue;">Results</b>: TallyQA comprises two parts: simple counting questions and complex counting questions. The results show that some models that perform well on simple counting questions may struggle with complex counting questions. For instance, BLIP2 has comparable performance with other more complex models, such as GPT-4, but its performance drops significantly on complex counting questions, which require, in addition to simple object detection, more sophisticated reasoning capabilities, such as pose estimation and positional reasoning.
           </p>
           <center>
             <figure>
+<<<<<<< HEAD
               <img src="static/images/tables/tallyqa_table.png" alt="TallyQA Result Image" style="margin-bottom: 10px;">
               <figcaption style="font-size: 0.75em; color: grey;">Table 2: Results on TallyQA. For Micro Acc., best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold. For Macro Acc. and RMSE, the highest value is bolded. For comparison, the result from SMoLA is the current best on TallyQA.</figcaption>
+=======
+              <img src="static/images/tables/tallqa_table.png" alt="TallyQA Result Image" style="margin-bottom: 10px;">
+              <figcaption style="font-size: 0.75em; color: grey;">Results on TallyQA. For Micro Acc., best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold. For Macro Acc. and RMSE, the highest value is bolded. For comparison, the result from SMoLA is the current best on TallyQA.</figcaption>
+>>>>>>> 7de299032a83d93f8aa4330e7596875872fe2c4f
               <img src="static/images/graphs/accuracy_distribution_complex.png" alt="TallyQA Complex Counting Performance Graph" style="margin-top: 10px;" width="50%"><img src="static/images/graphs/accuracy_distribution_simple.png" alt="TallyQA Simple Counting Performance Graph" style="margin-top: 10px;" width="50%">
-              <figcaption style="font-size: 0.75em; color: grey;">Figure 4: Accuracy distribution by correct answer, for complex and simple counting questions in TallyQA.</figcaption>
+              <figcaption style="font-size: 0.75em; color: grey;">Accuracy distribution by correct answer, for complex and simple counting questions in TallyQA.</figcaption>
             </figure>
           </center>
           <br> This suggests the necessity of incorporating more complex counting questions in the evaluation of visual reasoning models.
@@ -276,16 +281,16 @@
           <center>
             <figure>
               <img src="static/images/examples/TDIUC.png" alt="Example Image" width="100%"/>
-              <figcaption style="font-size: 0.75em; color: grey;">Figure 5: Example images from TDIUC showing various question types.</figcaption>
+              <figcaption style="font-size: 0.75em; color: grey;">Example images from TDIUC showing various question types.</figcaption>
             </figure>
           </center>
           <p>
-            <b style="color: blue;">Results</b>: The results in TDIUC provide us the detailed performance of each model on different question types. The results show that the models have different strengths and weaknesses on different question types. A few key takeaways: all models demonstrate inability in positional reasoning. LLaVA-NeXT has the highest performance in almost all question types, even surpassing previous SoTA VQA algorithm MuRel.
+            <b style="color: blue;">Results</b>: The results in TDIUC provide detailed performance metrics for each model on different question types. The results show that the models have varying strengths and weaknesses across these question types. A few key takeaways include: all models demonstrate an inability in positional reasoning. LLaVA-NeXT has the highest performance in almost all question types, surpassing even the previous state-of-the-art VQA algorithm, MuRel.
           </p>
           <center>
             <figure>
               <img src="static/images/tables/tdiuc_table.png" alt="TDIUC Result Image" style="margin-bottom: 10px;">
-              <figcaption style="font-size: 0.75em; color: grey;">Table 3: Accuracy on TDIUC for each question type. ‘L’ denotes LLaVA. Best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold, except for Macro. Acc., where the max is bolded. For comparison, MuRel is the previous best result from training on TDIUC.</figcaption>
+              <figcaption style="font-size: 0.75em; color: grey;">Accuracy on TDIUC for each question type. ‘L’ denotes LLaVA. Best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold, except for Macro. Acc., where the max is bolded. For comparison, MuRel is the previous best result from training on TDIUC.</figcaption>
             </figure>
           </center>
         </div>
@@ -307,16 +312,16 @@
           <center>
             <figure>
               <img src="static/images/examples/DVQA.png" alt="Example Image" width="100%"/>
-              <figcaption style="font-size: 0.75em; color: grey;">Figure 6: Example images from DVQA showing various chart types.</figcaption>
+              <figcaption style="font-size: 0.75em; color: grey;">Example images from DVQA showing various chart types.</figcaption>
             </figure>
           </center>
           <p>
-            <b style="color: blue;">Results</b>: The results for DVQA show that some models, while performing well on datasets with natural images, may struggle with synthetic images. The DVQA datasets are all synthetic images. The bars are generated with random colors and styles, with many abbreviations involved. Most models especially struggle in reasoning and data retrieval questions.
+            <b style="color: blue;">Results</b>: Results for DVQA show that some models, can perform well on datasets with natural images, but may still struggle with synthetic images. The DVQA dataset consists entirely of synthetic images, and the bars are generated with random colors and styles. Most models especially struggle in reasoning and data retrieval subset of DVQA questions.
           </p>
           <center>
             <figure>
               <img src="static/images/tables/dvqa_table.png" alt="DVQA Result Image" style="margin-bottom: 10px;">
-              <figcaption style="font-size: 0.75em; color: grey;">Table 4: Percentage (%) accuracy results on DVQA. Best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold, except for Macro. Acc., where the max is bolded. For comparison, PReFIL and Human results correspond to performance on Test-Novel, where PReFIL uses Improved OCR. PReFIL is a DVQA system trained on DVQA’s training set.</figcaption>
+              <figcaption style="font-size: 0.75em; color: grey;">Percentage (%) accuracy results on DVQA. Best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold, except for Macro. Acc., where the max is bolded. For comparison, PReFIL and Human results correspond to performance on Test-Novel, where PReFIL uses Improved OCR. PReFIL is a DVQA system trained on DVQA’s training set.</figcaption>
             </figure>
           </center>
         </div>

@@ -177,10 +177,10 @@
           <p>In this paper, we pioneer evaluating recent MLLMs (LLaVA-1.5, LLaVA-NeXT, BLIP2, InstructBLIP, GPT-4V, and GPT-4o) on datasets designed to address weaknesses, such as <i>extreme bias, spurious correlations and lack of fine-grained analysis</i> in earlier datasets like VQAv2 and RefCOCO.
           <br>We assess four VQA datasets:
             <ol>
-              <li><a href="#tdiuc"><strong style="color: blue;">TDIUC</strong></a>, which permits fine-grained analysis on 12 question types,</li>
-              <li><a href="#tallyqa"><strong style="color: blue;">TallyQA</strong></a>, which has simple and complex counting questions, and</li>
-              <li><a href="#dvqa"><strong style="color: blue;">DVQA</strong></a>, which requires optical character recognition for chart understanding.</li>
               <li><a href="#vqdv1"><strong style="color: blue;">VQDv1</strong></a>, which requires identifying all image regions that satisfy a given query. </li>
+              <li><a href="#tallyqa"><strong style="color: blue;">TallyQA</strong></a>, which has simple and complex counting questions, and</li>
+              <li><a href="#tdiuc"><strong style="color: blue;">TDIUC</strong></a>, which permits fine-grained analysis on 12 question types,</li>
+              <li><a href="#dvqa"><strong style="color: blue;">DVQA</strong></a>, which requires optical character recognition for chart understanding.</li>
             </ol>
           </p>
           <p>Our experiments reveal the <i>weaknesses of today's MLLMs</i> that have not previously been reported. Our code is integrated into a fork of the widely used LAVIS framework for MLLM evaluation, enabling the rapid assessment of future MLLMs.</p>
@@ -203,7 +203,7 @@
 
         <div class="content has-text-left">
           <p>
-            <b style="color: blue;">Description</b> 🗂️: VQDv1 challenges models to generate multiple bounding boxes 📦, not just one! Unlike typical datasets, queries in VQDv1 can result in 0 to N bounding boxes, testing general detection skills 🔍. This adds an extra layer of difficulty. 🌟
+            <b style="color: blue;">Description</b> 🗂️: VQDv1 challenges models to generate multiple bounding boxes 📦, not just one! Unlike typical datasets, queries in VQDv1 can result in 0 to N bounding boxes, testing general detection skills 🔍. This adds an extra layer of difficulty.
           </p>
           <center>
             <figure>
@@ -253,10 +253,20 @@
             <figure>
               <img src="static/images/tables/tallyqa_table.png" alt="TallyQA Result Image" style="margin-bottom: 10px;" width="60%">
               <figcaption style="font-size: 0.75em; color: grey;">Results on TallyQA. For Acc., best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold. For RMSE, the highest value is bolded. For comparison, the result from SMoLA is the current best on TallyQA.</figcaption>
-              <img src="static/images/graphs/accuracy_distribution_complex.png" alt="TallyQA Complex Counting Performance Graph" style="margin-top: 10px;" width="50%"><img src="static/images/graphs/accuracy_distribution_simple.png" alt="TallyQA Simple Counting Performance Graph" style="margin-top: 10px;" width="50%">
-              <figcaption style="font-size: 0.75em; color: grey;">Accuracy distribution by correct answer, for complex and simple counting questions in TallyQA.</figcaption>
-              <figcaption style="font-size: 0.9em; color: grey;">This suggests the necessity of incorporating more complex counting questions in the evaluation of visual reasoning models.</figcaption>
-            </figure>
+              
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 10px;">
+                  <figure style="width: 50%; text-align: center; margin: 0; padding: 0;">
+                      <img src="static/images/graphs/accuracy_distribution_simple.png" alt="TallyQA Simple Counting Performance Graph" width="100%">
+                      <figcaption style="font-size: 0.88em; color: black; margin-top: 0px;">TallyQA Simple</figcaption>
+                  </figure>
+                  <figure style="width: 50%; text-align: center; margin: 0; padding: 0;">
+                      <img src="static/images/graphs/accuracy_distribution_complex.png" alt="TallyQA Complex Counting Performance Graph" width="100%">
+                      <figcaption style="font-size: 0.88em; color: black; margin-top: 0px;">TallyQA Complex</figcaption>
+                  </figure>
+              </div>
+              
+              <figcaption style="font-size: 0.9em; color: grey;">Accuracy distribution by correct answer, for simple (left Fig.) and complex (right Fig.) counting questions in TallyQA. This suggests the necessity of incorporating more complex counting questions in the evaluation of visual reasoning models.</figcaption>
+          </figure>
           </center>
         </div>
       </div>
@@ -281,12 +291,12 @@
             </figure>
           </center>
           <p>
-            <b style="color: blue;">Results</b> 📊: TDIUC results provide detailed performance metrics for each model on different question types. Models show varying strengths and weaknesses across these types. Key takeaways: all models struggle with positional reasoning 📍. LLaVA-NeXT outperforms in almost all question types, even surpassing the previous state-of-the-art VQA algorithm, MuRel. 🌟
+            <b style="color: blue;">Results</b> 📊: TDIUC results provide detailed performance metrics for each model on different question types. Models show varying strengths and weaknesses across these types. Key takeaways: all models struggle with positional reasoning 📍. LLaVA-NeXT outperforms in almost all question types, even surpassing the previous state-of-the-art VQA algorithm, MuRel.
           </p>
           <center>
             <figure>
               <img src="static/images/tables/tdiuc_table.png" alt="TDIUC Result Image" style="margin-bottom: 10px;" width="85%">
-              <figcaption style="font-size: 0.75em; color: grey;">Accuracy on TDIUC for each question type. ‘L’ denotes LLaVA. Best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold, except for Macro. Acc., where the max is bolded. For comparison, MuRel is the previous best result from training on TDIUC.</figcaption>
+              <figcaption style="font-size: 0.75em; color: grey;">Accuracy on TDIUC for each question type. Best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold. For comparison, MuRel is the previous best result from training on TDIUC.</figcaption>
             </figure>
           </center>
         </div>
@@ -316,7 +326,7 @@
           <center>
             <figure>
               <img src="static/images/tables/dvqa_table.png" alt="DVQA Result Image" style="margin-bottom: 10px;" width="60%">
-              <figcaption style="font-size: 0.75em; color: grey;">Percentage (%) accuracy results on DVQA. Best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold, except for Macro. Acc., where the max is bolded. For comparison, PReFIL and Human results correspond to performance on Test-Novel, where PReFIL uses Improved OCR. PReFIL is a DVQA system trained on DVQA’s training set.</figcaption>
+              <figcaption style="font-size: 0.75em; color: grey;">Percentage (%) accuracy results on DVQA. Best performers based on paired asymptotic McNemar tests (α = 0.05) are in bold. For comparison, PReFIL and Human results correspond to performance on Test-Novel, where PReFIL uses Improved OCR. PReFIL is a DVQA system trained on DVQA’s training set.</figcaption>
             </figure>
           </center>
         </div>

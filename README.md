@@ -1,5 +1,5 @@
 # Revisiting Multi-Modal LLM Evaluation 
-### CVPR 25 BEAM, ICLR 2025 DATA-FM
+### CVPR '25 BEAM, ICLR '25 DATA-FM
 
 
 ## Acknowledgments
